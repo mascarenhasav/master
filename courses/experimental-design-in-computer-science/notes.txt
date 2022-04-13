@@ -1,0 +1,11 @@
+/*
+Name: Mascarenhas Alexandre
+Course: Experimental Design in Computer Science
+Instructor: Claus Aranha
+School: University of Tsukuba
+Year: 2022/1
+*/
+
+Here I'll write notes about the lectures.
+
+Class 1 - 15/04/2022

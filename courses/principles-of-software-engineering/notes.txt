@@ -1,0 +1,16 @@
+/*
+Name: Mascarenhas Alexandre
+Course: Principles of Software Engineering
+Instructor: Simona Vasilache
+School: University of Tsukuba
+Year: 2022/1
+*/
+
+
+Here I'll write notes about the lectures.
+
+Class 1 - 13/04/2022:
+
+Was introduced the concept of Software Engineering.
+We did an activity on google docs, where we musted to cite some requirements for a sofware.
+
