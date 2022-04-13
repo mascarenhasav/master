@@ -1,0 +1,17 @@
+%% Opening quotes
+%
+%Ch.0: John W. Tukey
+%Ch.1: Rosalind Franklin
+%Ch.2: Lise Meitner
+%Ch.3: Mae Carol Jemison
+%Ch.4: Florence Nightingale
+%Ch.5: Marie Skłodowska Curie
+%Ch.6: Suzana Herculano-Houzel
+%Ch.7: Gertrude B. Elion
+%Ch.8: Lise Meitner (REPEATED - TO CHANGE)
+%Ch.9: TO DO
+%Ch.10: Hertha Ayrton
+%Ch.11: Jocelyn Bell Burnell
+%Ch.12: TO DO
+%Ch.13: TO DO
+%Ch.14: TO DO
