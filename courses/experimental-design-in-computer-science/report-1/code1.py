@@ -15,22 +15,25 @@ print ("Mascarenhas Alexandre\nUniversity of Tsukuba")
 
 plt.rcParams['figure.figsize'] = (8,3)
 
-naruto = pd.read_csv("faria-lima.csv", delimiter = ',', skiprows = 3)
-luffy = pd.read_csv("temperature-sp.csv", delimiter = '\t', skiprows = 20)
+naruto = pd.read_csv("faria-lima.csv", delimiter = ',', skiprows = 1)
+luffy = pd.read_csv("temperature-sp.csv", delimiter = '\t', skiprows = 18)
 
 print (naruto)
 print (luffy)
 
+nInit = 0
+nEnd = 300
+
 nDados = 30
 nMed = 1
-flagAll = 1
+flagAll = 0
 
-date = naruto.iloc[:nDados, 0]
-bikersIbira = naruto.iloc[:nDados, 2]
-bikersPinha = naruto.iloc[:nDados, 3]
+date = naruto.iloc[nInit:nEnd, 0]
+bikersIbira = naruto.iloc[nInit:nEnd, 2]
+bikersPinha = naruto.iloc[nInit:nEnd, 3]
 
-dateTemp = luffy.iloc[:nDados, 0]
-tempMed = luffy.iloc[:nDados, 5]
+dateTemp = luffy.iloc[nInit:nEnd, 0]
+tempMed = luffy.iloc[nInit:nEnd, 3]
 #tempMed = tempMed.mul(50);
 '''
 print (date)

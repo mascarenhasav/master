@@ -3,8 +3,9 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 from datetime import date
 import numpy as np
-from scipy import fftpack as FFT
-
+import scipy as sp
+from sklearn.linear_model import LinearRegression
+from scipy import optimize
 #matplotlib.use('Agg')
 
 now = datetime.now()
@@ -13,24 +14,30 @@ now = now.strftime("%d-%m-20%y")
 print ("Report 1")
 print ("Mascarenhas Alexandre\nUniversity of Tsukuba")
 
-plt.rcParams['figure.figsize'] = (8,3)
+plt.rcParams['figure.figsize'] = (14, 6)
 
-naruto = pd.read_csv("faria-lima.csv", delimiter = ',', skiprows = 3)
-luffy = pd.read_csv("temperature-sp.csv", delimiter = '\t', skiprows = 20)
+naruto = pd.read_csv("faria-lima.csv", delimiter = ',', skiprows=1)
+luffy = pd.read_csv("temperature-sp.csv", delimiter = '\t', skiprows=18)
 
-print (naruto)
+
+nInit = 5
+nEnd = 150
+nMed = 6
+
+dateBikers = naruto.iloc[nInit:nEnd, 0]
+bikersIbira = naruto.iloc[nInit:nEnd, 2]
+bikersPinha = naruto.iloc[nInit:nEnd, 3]
+
+dateTemp = luffy.iloc[nInit:nEnd, 0]
+tempMax = luffy.iloc[nInit:nEnd, 4]
+chuva = luffy.iloc[nInit:nEnd, 3]
+tempMed = luffy.iloc[nInit:nEnd, 5]
+
+print (dateTemp)
+print (dateBikers)
+
 print (luffy)
 
-nDados = 30
-nMed = 1
-flagAll = 1
-
-date = naruto.iloc[:nDados, 0]
-bikersIbira = naruto.iloc[:nDados, 2]
-bikersPinha = naruto.iloc[:nDados, 3]
-
-dateTemp = luffy.iloc[:nDados, 0]
-tempMed = luffy.iloc[:nDados, 5]
 #tempMed = tempMed.mul(50);
 '''
 print (date)
@@ -39,58 +46,57 @@ print (bikersPinha)
 print (dateTemp)
 print (tempMed)
 '''
-
-
 n = 0
-sumTemp = 0
-tempMedMed = []
-dateTempMed = []
-bikersMed = []
-sumBikers = 0
+newTempMed = []
+newTempMax = []
+newDateTemp = []
+newRain = []
+newBikersIbira = []
 m = 0
+
+
 for i in tempMed:
 	if(n == nMed):
-		sumTemp /= nMed
-		sumBikers /= nMed
-		tempMedMed.append(sumTemp)
-		bikersMed.append(sumBikers)
-		dateTempMed.append(dateTemp[m])
-		sumTemp = 0
-		sumBikers = 0
+		newTempMed.append(i)
+		newTempMax.append(tempMax[m])
+		newDateTemp.append(dateTemp[m])
+		newBikersIbira.append(bikersIbira[m])
+		newRain.append(chuva[m])
 		n = 0
 	else:
-		sumTemp += i
-		sumBikers += bikersIbira[m]
 		n += 1
+
 	m += 1
 
 
 
-print (tempMedMed)
-print (bikersMed)
-print (dateTempMed)
+#print (newTempMed)
+#print (newTempMax)
+#print (newDateTemp)
+#print (newBikersIbira)
 
 fig, ax1 = plt.subplots()
 plt.grid(True)
 ax1.set_xlabel("Date")
-ax1.set_ylabel("N Bikers")
-ax1.set_title('Number of Bikers')
+ax1.set_ylabel("Num Cyclists")
+ax1.set_title('Number of Cyclists x Date')
+ax1.tick_params(axis='x', labelrotation=45)
+plot1 = ax1.plot(newDateTemp, newBikersIbira, 'g', label="Num Cyclists")
 
 ax2 = ax1.twinx()
 ax2.set_ylabel("Temperature (C)")
+plot2 = ax2.plot(newDateTemp, newTempMed, 'r', label="TempMed (C)")
 
-if(flagAll):
-	plot1 = ax1.plot(dateTemp, bikersIbira, 'r', label="N Bikers")
-	plot2 = ax2.plot(dateTemp, tempMed, label="Temp (C)")
-else:
-	plot1 = ax1.plot(dateTempMed, bikersMed, 'r', label="N Bikers")
-	plot2 = ax2.plot(dateTempMed, tempMedMed, label="Temp (C)")
+'''
+ax3 = ax1.twinx()
+ax3.set_ylabel("Temperature (C)")
+ax3.plot(newDateTemp, newRain, 'b', label="TempMed (C)")
+'''
 
 lns = plot1 + plot2
 labels = [l.get_label() for l in lns]
 plt.legend(lns, labels, loc=0)
 
-ax1.tick_params(axis='x', labelrotation=45)
 
 #plt.plot(date, bikersPinha, 'r')
 plt.show()
