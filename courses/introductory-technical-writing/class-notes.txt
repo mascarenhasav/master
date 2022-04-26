@@ -1,0 +1,15 @@
+/*
+Name: Mascarenhas Alexandre
+Course: Introductory Technical Writing
+Instructor: Millar Neil James
+School: University of Tsukuba
+Year: 2022/1
+*/
+
+Here I'll write notes about the lectures.
+
+Class 1 - 19/04/2022
+
+We talk about what the objetive of a technical writing and made some exercices in class.
+
+
