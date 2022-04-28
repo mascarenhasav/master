@@ -1,0 +1,25 @@
+PSO algorithm
+
+based on behaviour of manadas. It is a otimization algorithm.
+
+Starts with a population. Each individual has a position and a velocity.
+
+1. Evaluate fitness function (aptidao) for each individuo
+
+2. find the pBest - > Best position until the moment.
+
+3. Find gBest -> Best individuo of bando.
+
+4. Update speed of each particle.
+
+
+phi1 = random(0:1)*cte1 -> constant responsible to individual part
+phi2 = random(0:1)*cte2 -> constant responsible to group part
+
+The higher the constants are, grater the influence it will cause in new velocity
+and hence in new position of the particles.
+
+nVel = cVel = (pBest - pCurr)*ph1 + (gBest - pCurr)*phi2 
+	individual		group
+
+nPos = cPos + nVel
