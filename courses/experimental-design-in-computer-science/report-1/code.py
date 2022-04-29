@@ -14,6 +14,7 @@ import os
 from pathlib import Path
 import datetime
 import calendar
+from scipy.stats import linregress
 
 def findDay(test):
     born = datetime.datetime.strptime(test, '%Y-%m-%d').weekday()
@@ -64,14 +65,20 @@ luffy.drop(luffy.index[0:17], inplace = True)
 
 df = luffy[:'2020-01-01']
 df['Pinheiros'] = bikers['Pinheiros'].values
+#print (df[df.Temperature < 20])
 
 '''
 Variables to configure the day of the week and number of datas
 '''
-print ("Please enter the dates (from 2016-01-18 and 2020-01-01):\n")
+print ("\nPlease enter the dates (from 2016-01-18 and 2020-01-01):")
 startDate = input("Initial date (YYYY-mm-dd): ")
 endDate = input("Final date: (YYYY-mm-dd): ")
 data = df[startDate:endDate]
+
+
+print ("\n\nPlease enter the cut-off temperature cT in C [values will be <= cT ]:")
+cT = float(input("cT (0 for no filtering): "))
+data = data[data.Temperature < cT]
 
 print ("\n\nEnter the number of day of the week:\n")
 print ("   * 1 -> Mon")
@@ -168,6 +175,7 @@ if dayWeek != 0:
 	ax1.set_ylabel("Number of Cyclists (N)")
 	ax1.tick_params(axis='x', labelrotation=45)
 	plot1 = ax1.scatter(newData['Temperature'].values, newData['Pinheiros'].values, label="Number of Cyclists towards Pinheiros (N)")
+	ax1.plot(x, linregress(x, y)[1] + linregress(x, y)[0]*x, "g" )
 	plt.savefig(f'./scatterGraphs/Bikers-Temp_x_Date-'+dayWeekStr[dayWeek]+'-'+startDate+'-'+endDate+'-scatter.png', format='png')
 	plt.show()
 
@@ -226,6 +234,7 @@ else:
 	ax1.set_ylabel("Number of Cyclists (N)")
 	ax1.tick_params(axis='x', labelrotation=45)
 	plot1 = ax1.scatter(data['Temperature'].values, data['Pinheiros'].values, label="Number of Cyclists towards Pinheiros (N)")
+	ax1.plot(x, linregress(x, y)[1] + linregress(x, y)[0]*x, "g" )
 	plt.savefig(f'./scatterGraphs/Bikers-Temp_x_Date-Everyday-'+startDate+'-'+endDate+'-scatter.png', format='png')
 	plt.show()
 
@@ -257,9 +266,9 @@ print ("Statistical points\n")
 print (f"Sample size (n): {N}")
 print (f"Correlation coefficient (r): {r:.3f}")
 print (f"Confidence Interval (95%): [{rL:.3f}:{rU:.3f}]")
+print (f"Intercept: {linregress(x, y)[1]:.3f}")
+print (f"Slopee: {linregress(x, y)[0]:.3f}")
 print ("*************************************\n")
-
-plt.show()
 
 '''
 Finishing the script
