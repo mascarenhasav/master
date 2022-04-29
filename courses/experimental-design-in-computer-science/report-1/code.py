@@ -78,9 +78,9 @@ data = df[startDate:endDate]
 
 print ("\n\nPlease enter the cut-off temperature cT in C [values will be <= cT ]:")
 cT = float(input("cT (0 for no filtering): "))
-data = data[data.Temperature < cT]
+if(cT > 0):data = data[data.Temperature < cT]
 
-print ("\n\nEnter the number of day of the week:\n")
+print ("\n\nEnter the number of day of the week:")
 print ("   * 1 -> Mon")
 print ("   * 2 -> Tue")
 print ("   * 3 -> Wed")
@@ -88,7 +88,7 @@ print ("   * 4 -> Thu")
 print ("   * 5 -> Fri")
 print ("   * 6 -> Sat")
 print ("   * 7 -> Sun")
-print ("   * 0 -> Everyday\n")
+print ("   * 0 -> Everyday")
 
 dayWeek = int(input("Day: "))
 dayWeekStr = ["Everyday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
@@ -267,7 +267,7 @@ print (f"Sample size (n): {N}")
 print (f"Correlation coefficient (r): {r:.3f}")
 print (f"Confidence Interval (95%): [{rL:.3f}:{rU:.3f}]")
 print (f"Intercept: {linregress(x, y)[1]:.3f}")
-print (f"Slopee: {linregress(x, y)[0]:.3f}")
+print (f"Slope: {linregress(x, y)[0]:.3f}")
 print ("*************************************\n")
 
 '''
