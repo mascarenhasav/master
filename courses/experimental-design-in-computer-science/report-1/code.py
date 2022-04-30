@@ -44,7 +44,7 @@ Plota linha com selecao de dias da semana
 
 '''
 
-plt.rcParams['figure.figsize'] = (16, 8)
+plt.rcParams['figure.figsize'] = (12, 6)
 
 '''
 importing datasets
@@ -116,8 +116,6 @@ if (checkDayWeek > 0):
 else:
 	n = 6+checkDayWeek
 
-fig, ax1 = plt.subplots()
-plt.grid(True)
 
 if dayWeek != 0:
 
@@ -169,37 +167,47 @@ if dayWeek != 0:
 	rL = (math.exp(2*zL) - 1)/(math.exp(2*zL) + 1)
 	rU = (math.exp(2*zU) - 1)/(math.exp(2*zU) + 1)
 
-	#ax1.set_title(f'Daily Temperature and Daily Number of Cyclists\nevery {dayWeekStr[dayWeek]} between {startDate} and {endDate}\n\nSample size (n): {N}   Correlation coefficient (r): {r:.3f}   Confidence Interval (95%): [{rL:.3f}:{rU:.3f}]')
-	ax1.set_title(f'Daily Temperature and Daily Number of Cyclists\nevery {dayWeekStr[dayWeek]} between {startDate} and {endDate}')
+
+	fig1, ax1 = plt.subplots()
+	plt.grid(True)
+	ax1.set_title(f'Daily Temperature and Daily Number of Cyclists\nevery {dayWeekStr[dayWeek]} between {startDate} and {endDate}\nSample size (n): {N}   Correlation coefficient (r): {r:.3f}   Confidence Interval (95%): [{rL:.3f}:{rU:.3f}]')
 	ax1.set_xlabel("Temperature (C)")
 	ax1.set_ylabel("Number of Cyclists (N)")
 	ax1.tick_params(axis='x', labelrotation=45)
-	plot1 = ax1.scatter(newData['Temperature'].values, newData['Pinheiros'].values, label="Number of Cyclists towards Pinheiros (N)")
+	ax1.scatter(newData['Temperature'].values, newData['Pinheiros'].values, label="Number of Cyclists towards Pinheiros (N)")
 	ax1.plot(x, linregress(x, y)[1] + linregress(x, y)[0]*x, "g" )
-	plt.savefig(f'./scatterGraphs/Bikers-Temp_x_Date-'+dayWeekStr[dayWeek]+'-'+startDate+'-'+endDate+'-scatter.png', format='png')
-	plt.show()
+	fig1.savefig(f'./scatterGraphs/Bikers-Temp_x_Date-'+dayWeekStr[dayWeek]+'-'+startDate+'-'+endDate+'-scatter.png', format='png')
 
-	ax1.set_xlabel("Temperature (C)")
-	ax1.set_ylabel("Number of Cyclists (N)")
-	ax1.tick_params(axis='x', labelrotation=45)
-	plot1 = ax1.bar(newData['Temperature'].values, newData['Pinheiros'].values, label="Number of Cyclists towards Pinheiros (N)")
-	plt.savefig(f'./barGraphs/Bikers-Temp_x_Date-'+dayWeekStr[dayWeek]+'-'+startDate+'-'+endDate+'-bar.png', format='png')
 
-	ax1.set_xlabel("Date")
-	ax1.set_ylabel("Number of Cyclists (N)")
-	ax1.tick_params(axis='x', labelrotation=45)
-	ax1.set_xlim(data.index[0], data.index[-1])
-	plot1 = ax1.plot(newData.index, newData['Pinheiros'].values, 'g', label="Number of Cyclists towards Pinheiros (N)")
-	ax2 = ax1.twinx()
-	ax2.set_ylabel("Temperature (C)")
-	plot2 = ax2.plot(newData.index, newData['Temperature'].values, 'r', label="Average Temperature (C)")
+	fig2, ax2 = plt.subplots()
+	plt.grid(True)
+	ax2.set_title(f'Daily Temperature and Daily Number of Cyclists\nevery {dayWeekStr[dayWeek]} between {startDate} and {endDate}\nSample size (n): {N}   Correlation coefficient (r): {r:.3f}   Confidence Interval (95%): [{rL:.3f}:{rU:.3f}]')
+	ax2.set_xlabel("Temperature (C)")
+	ax2.set_ylabel("Number of Cyclists (N)")
+	ax2.tick_params(axis='x', labelrotation=45)
+	ax2.bar(newData['Temperature'].values, newData['Pinheiros'].values, label="Number of Cyclists towards Pinheiros (N)")
+	fig2.savefig(f'./barGraphs/Bikers-Temp_x_Date-'+dayWeekStr[dayWeek]+'-'+startDate+'-'+endDate+'-bar.png', format='png')
+
+
+	fig3, ax3 = plt.subplots()
+	plt.grid(True)
+	ax3.set_title(f'Daily Temperature and Daily Number of Cyclists\nevery {dayWeekStr[dayWeek]} between {startDate} and {endDate}\nSample size (n): {N}   Correlation coefficient (r): {r:.3f}   Confidence Interval (95%): [{rL:.3f}:{rU:.3f}]')
+	ax3.set_xlabel("Date")
+	ax3.set_ylabel("Number of Cyclists (N)")
+	ax3.tick_params(axis='x', labelrotation=45)
+	ax3.set_xlim(data.index[0], data.index[-1])
+	plot1 = ax3.plot(newData.index, newData['Pinheiros'].values, 'g', label="Number of Cyclists towards Pinheiros (N)")
+	ax4 = ax3.twinx()
+	ax4.set_ylabel("Temperature (C)")
+	plot2 = ax4.plot(newData.index, newData['Temperature'].values, 'r', label="Average Temperature (C)")
 	lns = plot1 + plot2
 	labels = [l.get_label() for l in lns]
 	plt.legend(lns, labels, loc=0)
 	date_form = DateFormatter("%b %y")
-	ax1.xaxis.set_major_formatter(date_form)
-	ax1.xaxis.set_major_locator(mdates.MonthLocator(interval=1))
-	plt.savefig(f'./lineGraphs/Bikers-Temp_x_Date-'+dayWeekStr[dayWeek]+'-'+startDate+'-'+endDate+'-line.png', format='png')
+	ax3.xaxis.set_major_formatter(date_form)
+	ax3.xaxis.set_major_locator(mdates.MonthLocator(interval=1))
+	fig3.savefig(f'./lineGraphs/Bikers-Temp_x_Date-'+dayWeekStr[dayWeek]+'-'+startDate+'-'+endDate+'-line.png', format='png')
+	plt.show()
 
 else:
 
@@ -228,38 +236,46 @@ else:
 	rL = (math.exp(2*zL) - 1)/(math.exp(2*zL) + 1)
 	rU = (math.exp(2*zU) - 1)/(math.exp(2*zU) + 1)
 
-	#ax1.set_title(f'Daily Temperature and Daily Number of Cyclists\neveryday between {startDate} and {endDate}\n\nSample size (n): {N}   Correlation coefficient (r): {r:.3f}   Confidence Interval (95%): [{rL:.3f}:{rU:.3f}]')
-	ax1.set_title(f'Daily Temperature and Daily Number of Cyclists\neveryday between {startDate} and {endDate}')
+	fig1, ax1 = plt.subplots()
+	plt.grid(True)
+	ax1.set_title(f'Daily Temperature and Daily Number of Cyclists\neveryday between {startDate} and {endDate}\nSample size (n): {N}   Correlation coefficient (r): {r:.3f}   Confidence Interval (95%): [{rL:.3f}:{rU:.3f}]')
 	ax1.set_xlabel("Temperature (C)")
 	ax1.set_ylabel("Number of Cyclists (N)")
 	ax1.tick_params(axis='x', labelrotation=45)
-	plot1 = ax1.scatter(data['Temperature'].values, data['Pinheiros'].values, label="Number of Cyclists towards Pinheiros (N)")
+	ax1.scatter(data['Temperature'].values, data['Pinheiros'].values, label="Number of Cyclists towards Pinheiros (N)")
 	ax1.plot(x, linregress(x, y)[1] + linregress(x, y)[0]*x, "g" )
-	plt.savefig(f'./scatterGraphs/Bikers-Temp_x_Date-Everyday-'+startDate+'-'+endDate+'-scatter.png', format='png')
-	plt.show()
+	fig1.savefig(f'./scatterGraphs/Bikers-Temp_x_Date-Everyday-'+startDate+'-'+endDate+'-scatter.png', format='png')
 
-	ax1.set_xlabel("Temperature (C)")
-	ax1.set_ylabel("Number of Cyclists (N)")
-	ax1.tick_params(axis='x', labelrotation=45)
-	plot1 = ax1.bar(data['Temperature'].values, data['Pinheiros'].values, label="Number of Cyclists towards Pinheiros (N)")
-	plt.savefig(f'./barGraphs/Bikers-Temp_x_Date-Everyday-'+startDate+'-'+endDate+'-bar.png', format='png')
 
-	ax1.set_xlabel("Date")
-	ax1.set_ylabel("Number of Cyclists (N)")
-	ax1.tick_params(axis='x', labelrotation=45)
-	ax1.set_xlim(data.index[0], data.index[-1])
-	plot1 = ax1.plot(data.index, data['Pinheiros'].values, 'g', label="Number of Cyclists towards Pinheiros (N)")
-	ax2 = ax1.twinx()
-	ax2.set_ylabel("Temperature (C)")
-	plot2 = ax2.plot(data.index, data['Temperature'].values, 'r', label="Average Temperature (C)")
+	fig2, ax2 = plt.subplots()
+	plt.grid(True)
+	ax2.set_title(f'Daily Temperature and Daily Number of Cyclists\neveryday between {startDate} and {endDate}\nSample size (n): {N}   Correlation coefficient (r): {r:.3f}   Confidence Interval (95%): [{rL:.3f}:{rU:.3f}]')
+	ax2.set_xlabel("Temperature (C)")
+	ax2.set_ylabel("Number of Cyclists (N)")
+	ax2.tick_params(axis='x', labelrotation=45)
+	ax2.bar(data['Temperature'].values, data['Pinheiros'].values, label="Number of Cyclists towards Pinheiros (N)")
+	fig2.savefig(f'./barGraphs/Bikers-Temp_x_Date-Everyday-'+startDate+'-'+endDate+'-bar.png', format='png')
+
+
+	fig3, ax3 = plt.subplots()
+	plt.grid(True)
+	ax3.set_title(f'Daily Temperature and Daily Number of Cyclists\neveryday between {startDate} and {endDate}\nSample size (n): {N}   Correlation coefficient (r): {r:.3f}   Confidence Interval (95%): [{rL:.3f}:{rU:.3f}]')
+	ax3.set_xlabel("Date")
+	ax3.set_ylabel("Number of Cyclists (N)")
+	ax3.tick_params(axis='x', labelrotation=45)
+	ax3.set_xlim(data.index[0], data.index[-1])
+	plot1 = ax3.plot(data.index, data['Pinheiros'].values, 'g', label="Number of Cyclists towards Pinheiros (N)")
+	ax4 = ax3.twinx()
+	ax4.set_ylabel("Temperature (C)")
+	plot2 = ax4.plot(data.index, data['Temperature'].values, 'r', label="Average Temperature (C)")
 	lns = plot1 + plot2
 	labels = [l.get_label() for l in lns]
 	plt.legend(lns, labels, loc=0)
 	date_form = DateFormatter("%b %y")
-	ax1.xaxis.set_major_formatter(date_form)
-	ax1.xaxis.set_major_locator(mdates.MonthLocator(interval=1))
-	plt.savefig(f'./lineGraphs/Bikers-Temp_x_Date-Everyday-'+startDate+'-'+endDate+'-line.png', format='png')
-
+	ax3.xaxis.set_major_formatter(date_form)
+	ax3.xaxis.set_major_locator(mdates.MonthLocator(interval=1))
+	fig3.savefig(f'./lineGraphs/Bikers-Temp_x_Date-Everyday-'+startDate+'-'+endDate+'-line.png', format='png')
+	plt.show()
 
 print ("\n*************************************")
 print ("Statistical points\n")
