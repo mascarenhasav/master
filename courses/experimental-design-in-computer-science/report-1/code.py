@@ -21,7 +21,6 @@ def findDay(test):
     return (calendar.day_name[born])
 
 
-
 # Date time conversion registration
 from pandas.plotting import register_matplotlib_converters
 register_matplotlib_converters()
