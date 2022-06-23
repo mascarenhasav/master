@@ -1,0 +1,256 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Plasmati Graduate CV
+% LaTeX Template
+% Version 1.0 (24/3/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Alessandro Plasmati (alessandro.plasmati@gmail.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template needs to be compiled with XeLaTeX.
+% The main document font is called Fontin and can be downloaded for free
+% from here: http://www.exljbris.com/fontin.html
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[a4paper,10pt]{article} % Default font size and paper size
+\usepackage{graphicx}
+\graphicspath{ {./pictures/} }
+\usepackage{fontspec} % For loading fonts
+
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin} % Main document font
+
+\usepackage{xunicode,xltxtra,url,parskip} % Formatting packages
+
+\usepackage[usenames,dvipsnames]{xcolor} % Required for specifying custom colors
+
+\usepackage[big]{layaureo} % Margin formatting of the A4 page, an alternative to layaureo can be \usepackage{fullpage}
+% To reduce the height of the top margin uncomment: \addtolength{\voffset}{-1.3cm}
+%\usepackage{fullpage}
+
+\usepackage{hyperref} % Required for adding links	and customizing them
+\definecolor{linkcolour}{rgb}{0,0.2,0.6} % Link color
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour} % Set link colors throughout the document
+
+\usepackage{titlesec} % Used to customize the \section command
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule] % Text formatting of sections
+\titlespacing{\section}{0pt}{3pt}{3pt} % Spacing around sections
+
+\begin{document}
+
+\pagestyle{empty} % Removes page numbering
+
+\newcommand{\fb}{\fontspec{Latin Modern Roman}} % Change the font of the \LaTeX command under the skills section
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+\centering{\includegraphics[scale=0.1]{3x4}}
+\par{\centering{\Huge Alexandre \textsc{Mascarenhas}}\bigskip\par} % Your name
+
+\section{Personal Data}
+
+\begin{tabular}{rl}
+\textsc{Country and Date of Birth:} & Brazil  | 20 June 1996 \\
+\textsc{Address:} & 149 Itaiara Street, Jabaquara, Sao Paulo, Brazil \\
+\textsc{Phone:} & +55 11 973612817\\
+\textsc{email:} & \href{mailto:mascarenhasav@gmail.com}{mascarenhasav@gmail.com}
+\end{tabular}
+\\
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+
+\begin{tabular}{rl}	
+
+\textsc{Since Aug} 2018 & Undergraduate in \textsc{Electrical Engineering}\\ &\textbf{Cruzeiro do sul University}, Sao Paulo\\
+&Expected graduation in June 2022\\
+\\
+
+%------------------------------------------------
+
+\textsc{Since Mar} 2015 & Undergraduate in \textsc{Physics}\\
+&\textbf{University of Sao Paulo}, Sao Paulo\\
+&Expected graduation in Dec 2021\\
+\\
+
+%------------------------------------------------
+
+\textsc{Jun} 2013 - \textsc{Jun} 2015 & \textsc{Electronic Technician}\\ 
+&\textbf{SENAI "Roberto Simonsen"}, Sao Paulo\\
+\\
+
+%------------------------------------------------
+
+\textsc{Jun} 2011 - \textsc{Jun} 2013  & \textsc{Maintenance Electrician}\\ 
+&\textbf{SENAI "Roberto Simonsen"}, Sao Paulo\\
+\\
+
+
+\end{tabular}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE 
+%----------------------------------------------------------------------------------------
+
+\section{Work Experience}
+
+\begin{tabular}{r|p{11cm}}
+
+\emph{Current} &  Electronics Technician at \textsc{Sao Paulo Metro}, Brazil \\
+\textsc{Oct 2017} & \emph{Urban railways that operate in the city of Sao Paulo}\\ 
+& \footnotesize{Development of asset monitoring systems, Hardware/Software for embedded systems(Microcontrollers and Linux Processors), with sending to a database for further analysis and predictive maintenance}\\
+\multicolumn{2}{c}{} \\
+
+%------------------------------------------------
+
+\textsc{Jun} 2015 - \textsc{Jun} 2017 & Collector at \textsc{SPTuris (Sao Paulo Tourism)}, Brazil \\& \emph{The official tourism and events company in the city of Sao Paulo}\\
+& \footnotesize{Controlled the entry of cars in the parking lot of Anhembi Park}\\
+\multicolumn{2}{c}{} \\
+
+%------------------------------------------------
+
+\textsc{Jul} 2013 - \textsc{Feb} 2014 & Front-End Developer at \textsc{Meu Web Gestor}, Brazil \\& \emph{Services provision in Business Management}\\
+& \footnotesize{Website and Software Development for business management}\\
+\multicolumn{2}{c}{} \\
+
+%------------------------------------------------
+
+\textsc{Jun} 2011 - \textsc{Jun} 2013 & Maintenance Electrician at \textsc{Telesp Inc}, Brazil \\& \emph{Telephony operator of the Telebras system in the Brazilian state of Sao Paulo}\\
+& \footnotesize{Performed preventive and corrective maintenance on building electrical systems}\\
+
+
+
+\end{tabular}
+
+%----------------------------------------------------------------------------------------
+%	ACADEMIC EXPERIENCE 
+%----------------------------------------------------------------------------------------
+
+\section{Academic Experience}
+
+\begin{tabular}{r|p{11cm}}
+
+\textsc{Jul} 2018 - \textsc{Feb} 2019 &  Noise measurements in new advanced materials at \textsc{Institute of Physics of the University of Sao Paulo}, Brazil \\
+&\emph{PUB Schoolarship student by University of Sao Paulo}\\
+&\emph{Advisor: Alexandre Levine}\\
+& \footnotesize{In this project we propose the development of a system for studying quantum noise at low temperatures. The measurement of noise allows unraveling the nature of the conduction states, from the material's internal dynamics, through the statistical correlation between scattering events. We propose to create a setup for noise measurements in our laboratory}\\
+& \footnotesize{Situation: Disabled}\\
+\multicolumn{2}{c}{} \\
+
+%------------------------------------------------
+
+\textsc{Aug} 2017 - \textsc{Nov} 2017 &  Pro-Student Monitor at \textsc{Institute of International Relations of the University of Sao Paulo}, Brazil \\
+&\emph{RUSP Schoolarship student by University of Sao Paulo}\\
+& \footnotesize{Managed the use of computers and assisted students in the use of software and resources related to basic computational tasks}\\
+\multicolumn{2}{c}{} \\
+
+%------------------------------------------------
+
+\textsc{Sep} 2016 - \textsc{Mar} 2017 & Support the prototyping for graduate students in electronics workshop of INOVALAB@POLI at \textsc{Polytechnical School of the University of Sao Paulo}, Brazil \\
+&\emph{PUB Schoolarship student by University of Sao Paulo}\\
+&\emph{Advisor: Roseli de Deus Lopes}\\
+& \footnotesize{Assisted undergraduate and graduate students in the use of machines, equipment and tools in the Prototyping Laboratory (CITI), mainly in tasks related to electronics and programming.}\\
+\multicolumn{2}{c}{} \\
+
+%------------------------------------------------
+
+\textsc{Aug} 2015 - \textsc{Jul} 2016 &  Demonstration Laboratory at \textsc{Institute of Physics of the University of Sao Paulo}, Brazil \\
+&\emph{PUB Schoolarship student by University of Sao Paulo}\\
+&\emph{Advisor: Mikiya Muramatsu}\\
+& \footnotesize{Maintained the experiments of the Demonstration Laboratory of the Physics Institute of the University of Sao Paulo and proposed and set up new experiments.}\\
+\multicolumn{2}{c}{} \\
+
+%------------------------------------------------
+
+\textsc{Jun} 2015 - \textsc{Jun} 2016 &  New modules for Toroidal Nuclear Reactor System Trigger Control (TCABR) at \textsc{Institute of Physics of the Univserity of Sao Paulo}, Brazil \\
+&\emph{Technological Initiation by University of Sao Paulo}\\
+&\emph{Advisor: Ricardo Magnus Osorio Galvão}\\
+& \footnotesize{Modernization of the Toroidal Magnetic Field Trigger of the Nuclear Fusion Reactor TCABR of the University of Sao Paulo. The project aimed at replacing the old magnetic field trigger board of the reactor that used analog electronics systems, with a microcontroled system with remote access via internet, using both Arduino and its modules. The project included everything from the elaboration of the circuits, through the programming of the software and the prototype of the electronic board, following the test of the system (not finished).}\\
+\multicolumn{2}{c}{} \\
+
+%------------------------------------------------
+
+\textsc{Jun} 2011 - \textsc{Jun} 2016 &  WorldSkills Training at \textsc{SENAI "Roberto Simonsen"}, Brazil \\
+& \footnotesize{Spent 5 years training for the Knowledge Olympics (WorldSkills, an international competition of technical level) in the Industrial Electronics modality, where he practiced the following skills:}\\
+& \footnotesize{
+\begin{itemize}
+    \item HARDWARE - Development of hardware to solve problem situations. Elaboration of the circuit, which could be Analog, Digital or Microprocessed, simulation in software (usually PROTEUS), design and manufacture of the electronic boards responsible for carrying out the task.
+    \item SOFTWARE - Development of software for microcontrollers in C, C++ and/or Assembly languages
+    \item MEASURES AND REPAIRS - Detection of defects, consequently, repair of available hardware and subsequently performed measurements according to hardware manuals and documents.
+    \item ASSEMBLY - Mechanical and electronic assembly of devices made available with manuals and documents.
+\end{itemize}}\\
+
+
+\end{tabular}
+
+
+
+%----------------------------------------------------------------------------------------
+%	LANGUAGES
+%----------------------------------------------------------------------------------------
+\section{Languages}
+
+\begin{tabular}{rp{10cm}}
+
+\textsc{Portuguese:} & Mothertongue\\
+
+\textsc{English:} & Very good Writing and Reading, good Speaking and Listening\\
+
+\textsc{Spanish:} & Good Writing, Reading, Speaking and Listening\\
+
+\textsc{Japanese:} & Fair Listening\\
+\end{tabular}
+
+%----------------------------------------------------------------------------------------
+%	COMPUTER SKILLS 
+%----------------------------------------------------------------------------------------
+
+\section{Computer Skills}
+
+\begin{tabular}{rp{10cm}}
+Advanced Knowledge: & \textsc{C/C++}, Assembly, Python and Javascript.\\
+
+Intermediate Knowledge: & \textsc{vba}, Excel, Word, PowerPoint, Linux and Windows and Hardware Maintenance.\\
+
+Basic Knowledge: & \textsc{php}, my\textsc{sql}, \textsc{html}, Access, {\fb \LaTeX}\setmainfont[SmallCapsFont=Fontin SmallCaps]{Fontin-Regular}\\
+
+\end{tabular}
+
+%----------------------------------------------------------------------------------------
+%	HONOR AND AWARDS
+%----------------------------------------------------------------------------------------
+
+\section{Honor and Awards}
+\begin{itemize}
+\item{Bronze Medalist at the Brazilian Public Schools Mathematics Olympiad (OBMEP)}\\
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	INTERESTS AND ACTIVITIES
+%----------------------------------------------------------------------------------------
+
+\section{Interests and Activities}
+
+\begin{flushleft}
+Soccer, Travelling, Playing Electric Guitar, Skating\\
+Reading Manga\\
+Watching Science Fiction Movies and Japanese Cartoons\\
+Technology, Open-Source, Programming\\
+\end{flushleft}
+
+
+\end{document}

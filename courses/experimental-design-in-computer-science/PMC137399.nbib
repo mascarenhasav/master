@@ -1,0 +1,64 @@
+PMID- 11940268
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20020429
+LR  - 20191105
+IS  - 1364-8535 (Print)
+IS  - 1466-609X (Electronic)
+IS  - 1364-8535 (Linking)
+VI  - 6
+IP  - 1
+DP  - 2002 Feb
+TI  - Statistics review 1: presenting and summarising data.
+PG  - 66-71
+AB  - The present review is the first in an ongoing guide to medical statistics, using 
+      specific examples from intensive care. The first step in any analysis is to 
+      describe and summarize the data. As well as becoming familiar with the data, this 
+      is also an opportunity to look for unusually high or low values (outliers), to 
+      check the assumptions required for statistical tests, and to decide the best way 
+      to categorize the data if this is necessary. In addition to tables and graphs, 
+      summary values are a convenient way to summarize large amounts of information. 
+      This review introduces some of these measures. It describes and gives examples of 
+      qualitative data (unordered and ordered) and quantitative data (discrete and 
+      continuous); how these types of data can be represented figuratively; the two 
+      important features of a quantitative dataset (location and variability); the 
+      measures of location (mean, median and mode); the measures of variability (range, 
+      interquartile range, standard deviation and variance); common distributions of 
+      clinical data; and simple transformations of positively skewed data.
+FAU - Whitley, Elise
+AU  - Whitley E
+AD  - University of Bristol, Bristol, UK.
+FAU - Ball, Jonathan
+AU  - Ball J
+LA  - eng
+PT  - Comparative Study
+PT  - Journal Article
+PT  - Review
+DEP - 20011129
+TA  - Crit Care
+JT  - Critical care (London, England)
+JID - 9801902
+RN  - 0 (Hemoglobins)
+RN  - 8W8T17847W (Urea)
+SB  - IM
+MH  - Analysis of Variance
+MH  - *Critical Care
+MH  - Hemoglobins/analysis
+MH  - Humans
+MH  - Hydrogen-Ion Concentration
+MH  - Intensive Care Units
+MH  - *Models, Statistical
+MH  - Statistical Distributions
+MH  - *Statistics as Topic
+MH  - Urea/blood
+PMC - PMC137399
+EDAT- 2002/04/10 10:00
+MHDA- 2002/05/01 10:01
+CRDT- 2002/04/10 10:00
+PHST- 2002/04/10 10:00 [pubmed]
+PHST- 2002/05/01 10:01 [medline]
+PHST- 2002/04/10 10:00 [entrez]
+AID - cc1455 [pii]
+AID - 10.1186/cc1455 [doi]
+PST - ppublish
+SO  - Crit Care. 2002 Feb;6(1):66-71. doi: 10.1186/cc1455. Epub 2001 Nov 29.
