@@ -9,3 +9,36 @@ Year: 2022/1
 Here I'll write notes about the lectures.
 
 Class 1 - 15/04/2022
+
+-- Handwrite sheet for examination --
+
+- Caracteriscts and differences between z and t tests:
+Both are statistical tests for testing a hipothesis. 
+The main difference is that the z-test is used to compare
+a data point, for instance, the mean of the sample, based on
+the standard deviation (large sample size > 30), and its based
+on normal distribution. The t-test is more commonly used to 
+compare the averages of two samples, where the standar deviation 
+or variance is unknown (small sample size < 30), and its based
+on t-student distribution.
+
+- Assumption of Independence:
+Many statistical tests is based on assumption that the data is 
+independent. This means that a data point should not have a
+connection with another data point. An example is the amount of 
+money which a person earns related to what it eat in breakfest.
+Experimental conditions of all observations are exactly the same.
+
+- Power of a experiment:
+
+- Pre-registered experiment:
+Its an strategy to register the methodology, kind of analysis, 
+and some other techniques that will be used in the experiment 
+before it is conducted.
+To guide the steps of the experiment.
+Avoid forget the main objective of the experiment.
+A better structure to performing the experiment and plan it.
+Reduce the effect of human bias.
+
+
+
