@@ -41,4 +41,16 @@ A better structure to performing the experiment and plan it.
 Reduce the effect of human bias.
 
 
+- Type I error (False positive):
+alpha 
+condifence interval = 1 - alpha
+Depends on the the distribution of the NH
+- Type II error (False negative):
+beta
+power of the test = 1 - beta
+Depends on the real value of the parameter
+
+Reject H0 (easy to control error) - strong conclusion
+Fail to reject H0 (hard to control error) - weak conclusion
+
 
